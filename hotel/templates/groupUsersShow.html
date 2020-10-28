@@ -1,0 +1,17 @@
+<table>
+	<tbody>
+		{% for user in groupUsers %}
+			<tr>
+				<td>
+					{{ loop.index }}
+				</td>
+				<td>
+					{{ user.fname }}
+				</td>
+				<td>
+					{{ user.lname }}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

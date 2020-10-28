@@ -1,0 +1,17 @@
+<table>
+	<tbody>
+		{% for fun in groupFuns %}
+			<tr>
+				<td>
+					{{ loop.index }}
+				</td>
+				<td>
+					{{ fun.name }}
+				</td>
+				<td>
+					{{ fun.description }}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

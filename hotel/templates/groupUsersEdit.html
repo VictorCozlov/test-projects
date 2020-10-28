@@ -1,0 +1,22 @@
+<form action="groupUsersEditSave.php" method="POST">
+	<input type="hidden" name="groupId" value="{{ groupId }}"/>
+	<table>
+		<tbody>
+			{% for user in groupUsers %}
+				<tr>
+					<td>
+						{{ loop.index }}
+					</td>
+					<td>
+						<input type="checkbox" name="{{ user.id }}" value="{{ user.id }}" {% if user.isOwned == 1 %} checked {% endif %}>
+						{{ user.fname }}
+						-
+						{{ user.lname }}
+						</input>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<input type="submit" value="ok"/>
+</form>

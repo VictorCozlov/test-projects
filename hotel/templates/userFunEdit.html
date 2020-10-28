@@ -1,0 +1,27 @@
+<form action="userFunEditSave.php" method="POST">
+	<table>
+		<tbody>
+			<input type="hidden" name="userId" value="{{ userId }}"/>
+			{% for group in groups %}
+				<tr>
+					<td>
+						<input type="checkbox" name="{{ group.id }}" {% if group.isOwned == '1' %} checked {% endif %}>
+					</td>
+					<td>
+						<!-- group name -->
+						{{ group.name }}
+					</td>
+					<td>
+						<!-- group.description -->
+						{{ group.description }}
+					</td>
+				</tr>
+			{% endfor %}
+			<tr>
+				<td>
+					<input type="submit" value="Salveaza">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</form>

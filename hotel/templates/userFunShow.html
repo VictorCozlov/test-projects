@@ -1,0 +1,17 @@
+<table>
+	<tbody>
+		{% for group in groups %}
+			<tr>
+				<td>
+					{{ loop.index }}
+				</td>
+				<td>
+					{{ group.name }}
+				</td>
+				<td>
+					{{ group.description }}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

@@ -1,0 +1,33 @@
+<table>
+	<tbody>
+		{% for user in userList %}
+			<tr>
+				<td>
+					<!-- user login -->
+					{{ user.login }}
+				</td>
+				<td>
+					<!-- user first name -->
+					{{ user.fname}}
+				</td>
+				<td>
+					<!-- user last name -->
+					{{ user.lname}}
+				</td>
+				<td>
+					<!-- operations -->
+
+					<!-- show users -->
+					<a href="userShow.php?user={{ user.id }}">Arata datele utilizatorului</a>
+					<!-- edit users -->
+					<a href="userEdit.php?user={{ user.id }}">Redacteaza datele utilizatorului</a>
+
+					<!-- show functions -->
+					<a href="userFunShow.php?user={{ user.id }}">Arata Grupurile</a>
+					<!-- edit functions -->
+					<a href="userFunEdit.php?user={{ user.id }}">Redacteaza lista de Grupuri</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
