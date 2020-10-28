@@ -1,0 +1,50 @@
+<h1>Restaurants view/add new</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Adress</th>
+              <th>Telephone</th>
+              <th>Number sits</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="restn in restns">
+              <td>{{restn.name}}</td>
+              <td>{{restn.adress}}</td>
+              <td>{{restn.telephone}}</td>
+              <td>{{restn.sits}}</td>
+              <td>
+                  <a href="#edit/{{restn.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_restaurants.php?id={{restn.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+<form action="http://master-restauran.byethost22.com/php/add_restaurant.php" method="post" name="addRestaur">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" name="name" placeholder="Name"></td>
+    </tr>
+    <tr>
+      <th scope="row">Adress</th>
+      <td><input class="three_quarter first" type="text" name="adress" placeholder="Adress"></td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td><input class="three_quarter first" type="tel" placeholder="Contact Number" name="telephone"></td>
+    </tr>
+    <tr>
+      <th scope="row">Number sits</th>
+      <td><input class="three_quarter first" type="number"  min="1" max="250" name="number_sits" placeholder="Number sits"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add restaurant">Add restaurant</button>
+</form>

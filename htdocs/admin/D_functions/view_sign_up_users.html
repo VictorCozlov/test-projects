@@ -1,0 +1,19 @@
+<h1>Users subscribed for latest news</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in users">
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td><a href="http://master-restauran.byethost22.com/php/delete_subscribers.php?id={{user.id}}"><img src="../images/demo/delete.png" alt="delete"/></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

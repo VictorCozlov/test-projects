@@ -1,0 +1,108 @@
+<h1>View & Edit orders all</h1>
+    <div class="scrollable">
+        
+        <div class="container">
+        <table>
+          <tbody>
+            <tr>
+              <td scope="row">Orders for the last:</td>
+              <td>
+                  <select class="three_quarter" name="period" ng-model="data.period">
+                    <option value="1">Day</option>
+                    <option value="2">Week</option>
+                    <option value="3">2 Weeks</option>
+                    <option value="4">3 Weeks</option>
+                    <option value="5">Month</option>
+                    <option value="6">All</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">Select orders:</td>
+              <td>
+                  <table>
+                      <tr>
+                          <td><label class="radio-inline"><input type="radio"  name="which" ng-model="data.which" value="1"></label></td><td>All</td>
+                      </tr>
+                      <tr>
+                          <td><label class="radio-inline"><input type="radio"  name="which" ng-model="data.which" value="2"></label></td><td>Only reserved ones</td>
+                      </tr>
+                      <tr>
+                          <td><label class="radio-inline"><input type="radio"  name="which" ng-model="data.which" value="3"></label></td><td>Exept reserved ones</td>
+                      </tr>
+                  </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+            <a href="#functions/orderall/{{data.period}}/{{data.which}}"><button class="one_third" type="submit" title="Select orders">Show Orders</button></a>
+        </div>
+        
+        
+        <table>
+          <thead>
+            <tr>
+              <th>DateReq</th>
+              <th>DateEvent</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Prepaid</th>
+              <th>NrGuests</th>
+              <th>Accept</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="o in ordersall">
+              <td>{{o.date}}</td>
+              <td>{{o.r_date}}</td>
+              <td>{{o.name}}</td>
+              <td>{{o.tel}}</td>
+              <td>{{o.pr}}</td>
+              <td>{{o.ng}}</td>
+              <td>{{o.ac}}</td>
+              <td>
+                  <a href="#editOrder/{{o.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_orderFromOrders.php?id={{o.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<form action="http://master-restauran.byethost22.com/php/add_order.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+        <input class="three_quarter first" type="text" name="name" placeholder="Name">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td>
+          <input class="three_quarter first" type="text" name="tel" placeholder="Tel">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Number of guests</th>
+      <td>
+          <input class="three_quarter first" type="number" min="10" max="500" name="g" placeholder="nr of guests">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Data Event</th>
+      <td>
+          <input class="three_quarter first" type="text" name="date" placeholder="2017-10-25">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Time Event</th>
+      <td>
+          <input class="three_quarter first" type="text" name="time" placeholder="15:30:00">
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add order">Add Order</button>
+</form>

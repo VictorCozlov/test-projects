@@ -1,0 +1,209 @@
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded" style="background-image:url('../images/demo/backgrounds/01.png');"> 
+  <!-- ################################################################################################ -->
+  <div ng-include="'D_view/topLine.html'"></div>
+  <div ng-include="'D_view/top2line.html'"></div>
+  <div ng-include="'D_view/top3line_menu.html'"></div>
+  <div class="wrapper overlay">
+    <div id="pagetitle" class="hoc clear"> 
+      <h2>Administrative Pannel</h2>
+    </div>
+    <div id="breadcrumb" class="hoc clear"> 
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Lorem</a></li>
+        <li><a href="#">Ipsum</a></li>
+        <li><a href="#">Dolor</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Top Background Image Wrapper -->
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <div class="sidebar one_quarter first"> 
+      <div ng-include="'D_view/nav_left.html'"></div>
+      
+      <div class="sdb_holder">
+        <h6>Lorem ipsum dolor</h6>
+        <address>
+        Full Name<br>
+        Address Line 1<br>
+        Address Line 2<br>
+        Town/City<br>
+        Postcode/Zip<br>
+        <br>
+        Tel: xxxx xxxx xxxxxx<br>
+        Email: <a href="#">contact@domain.com</a>
+        </address>
+      </div>
+      <div class="sdb_holder">
+        <article>
+          <h6>Lorem ipsum dolor</h6>
+          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
+          <ul>
+            <li><a href="#">Lorem ipsum dolor sit</a></li>
+            <li>Etiam vel sapien et</li>
+            <li><a href="#">Etiam vel sapien et</a></li>
+          </ul>
+          <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
+          <p class="more"><a href="#">Continue Reading &raquo;</a></p>
+        </article>
+      </div>
+    </div>
+    <div class="content three_quarter"> 
+      
+      <div ng-switch="'{{var}}'">
+        <div ng-switch-when="users">
+           <div ng-include="'D_functions/add_view_users.html'"></div>
+        </div>
+        <div ng-switch-when="restaurants">
+           <div ng-include="'D_functions/add_view_restaurants.html'"></div>
+        </div>
+        <div ng-switch-when="restaurantsEdit">
+           <div ng-include="'D_functions/edit_restaurants.html'"></div>
+        </div>
+          <div ng-switch-when="SignUpUsersView">
+           <div ng-include="'D_functions/view_sign_up_users.html'"></div>
+        </div>
+          <div ng-switch-when="usersUpdate">
+           <div ng-include="'D_functions/edit_view_users.html'"></div>
+        </div>
+          <div ng-switch-when="menuView">
+           <div ng-include="'D_functions/add_view_menu.html'"></div>
+        </div>
+          <div ng-switch-when="menuEdit">
+           <div ng-include="'D_functions/edit_view_menu.html'"></div>
+        </div>
+          <div ng-switch-when="categoryView">
+           <div ng-include="'D_functions/add_view_category.html'"></div>
+        </div>
+          <div ng-switch-when="categoryEdit">
+           <div ng-include="'D_functions/edit_view_category.html'"></div>
+        </div>
+          <div ng-switch-when="warehousesView">
+           <div ng-include="'D_functions/add_view_warehous.html'"></div>
+        </div>
+          <div ng-switch-when="warehousEdit">
+           <div ng-include="'D_functions/edit_view_warehous.html'"></div>
+        </div>
+          <div ng-switch-when="providersView">
+           <div ng-include="'D_functions/add_view_provider.html'"></div>
+        </div>
+          <div ng-switch-when="providerEdit">
+           <div ng-include="'D_functions/edit_view_provider.html'"></div>
+        </div>
+          <div ng-switch-when="functionsView">
+           <div ng-include="'D_functions/add_view_functions.html'"></div>
+        </div>
+          <div ng-switch-when="functionsEdit">
+           <div ng-include="'D_functions/edit_view_functions.html'"></div>
+        </div>
+          <div ng-switch-when="employersView">
+           <div ng-include="'D_functions/add_view_employers.html'"></div>
+        </div>
+          <div ng-switch-when="employersEdit">
+           <div ng-include="'D_functions/edit_view_employers.html'"></div>
+        </div>
+          <div ng-switch-when="productsView">
+           <div ng-include="'D_functions/add_view_products.html'"></div>
+        </div>
+          <div ng-switch-when="productsEdit">
+           <div ng-include="'D_functions/edit_view_products.html'"></div>
+        </div>
+          <div ng-switch-when="productsInDepositView">
+           <div ng-include="'D_functions/add_view_prodInWareh.html'"></div>
+        </div>
+          <div ng-switch-when="productsWarehouseView">
+           <div ng-include="'D_functions/view_productsWarehouse.html'"></div>
+        </div>
+          <div ng-switch-when="editProductInWarehouse">
+           <div ng-include="'D_functions/edit_view_ProductInWarehouse.html'"></div>
+        </div>
+          <div ng-switch-when="dishesView">
+           <div ng-include="'D_functions/add_view_dishes.html'"></div>
+        </div>
+          <div ng-switch-when="dishesEdit">
+           <div ng-include="'D_functions/edit_view_dishes.html'"></div>
+        </div>
+          <div ng-switch-when="dishesToCat">
+           <div ng-include="'D_functions/add_dishToCategory.html'"></div>
+        </div>
+          <div ng-switch-when="dishesINCat">
+           <div ng-include="'D_functions/add_view_dishINCategory.html'"></div>
+        </div>
+          <div ng-switch-when="ProdInDish">
+           <div ng-include="'D_functions/add_view_ProdInDish.html'"></div>
+        </div>
+          <div ng-switch-when="ProdInDishCategory">
+           <div ng-include="'D_functions/add_view_ProdInDishId.html'"></div>
+        </div>
+          <div ng-switch-when="ProdInDishCategoryDish">
+           <div ng-include="'D_functions/add_view_ProdInDishCategoryDish.html'"></div>
+        </div>
+          <div ng-switch-when="ProdInDishCategoryEdit">
+           <div ng-include="'D_functions/add_view_ProdInDishCategoryEdit.html'"></div>
+        </div>
+          <div ng-switch-when="orderReservView">
+           <div ng-include="'D_functions/add_view_orders.html'"></div>
+        </div>
+          <div ng-switch-when="orderAllView">
+           <div ng-include="'D_functions/add_view_orderAll.html'"></div>
+        </div>
+          <div ng-switch-when="orderResEdit">
+           <div ng-include="'D_functions/view_orderEdit.html'"></div>
+        </div>
+          <div ng-switch-when="orderInternetView">
+           <div ng-include="'D_functions/view_orderInternetView.html'"></div>
+        </div>
+          <div ng-switch-when="orderEdit">
+           <div ng-include="'D_functions/edit_orderEdit.html'"></div>
+        </div>
+          <div ng-switch-when="add_menu">
+           <div ng-include="'D_functions/add_menu.html'"></div>
+        </div>
+          <div ng-switch-when="add_menu_to_orderRes">
+           <div ng-include="'D_functions/add_menu_to_orderRes.html'"></div>
+        </div>
+          <div ng-switch-when="add_dishesToMenu">
+           <div ng-include="'D_functions/add_dishesToMenu.html'"></div>
+        </div>
+          <div ng-switch-when="dishesOrdered">
+           <div ng-include="'D_functions/view_dishesOrdered.html'"></div>
+        </div>
+          <div ng-switch-when="ViewEditDishesMenu">
+           <div ng-include="'D_functions/edit_DishesMenu.html'"></div>
+        </div>
+          <div ng-switch-when="EditProfit">
+           <div ng-include="'D_functions/EditProfit.html'"></div>
+        </div>
+          <div ng-switch-when="dishesPopularView">
+           <div ng-include="'D_functions/view_dishesPopular.html'"></div>
+        </div>
+          <div ng-switch-when="selectOrder">
+           <div ng-include="'D_functions/selectOrder_forOcupation.html'"></div>
+        </div>
+          <div ng-switch-when="addWorkersForOrder">
+           <div ng-include="'D_functions/add_WorkersForOrder.html'"></div>
+        </div>
+          <div ng-switch-when="viewOrderEmpSelectOrd">
+           <div ng-include="'D_functions/view_OrderEmpSelectOrd.html'"></div>
+        </div>
+          <div ng-switch-when="editWorkersForOrder">
+           <div ng-include="'D_functions/edit_WorkersForOrder.html'"></div>
+        </div>
+          <div ng-switch-when="defaultUse">
+           <div ng-include="'D_functions/add_view_users.html'"></div>
+        </div>
+
+          
+        <div ng-switch-default>
+           <div>Choose an option from the left menu</div>
+        </div>
+      </div>
+    </div>
+    <!-- / main body -->
+  </main>
+</div>

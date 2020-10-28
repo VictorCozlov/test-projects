@@ -1,0 +1,25 @@
+<h1>Select Menu to change dishes</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Menu nr.</th>
+              <th>Name Menu</th>
+              <th>Menu Price fc</th>
+              <th>Menu Price c</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="menu in dishesOrd">
+              <td>{{menu.id}}</td>
+              <td>{{menu.n}}</td>
+              <td>{{menu.fc}}</td>
+              <td>{{menu.c}}</td>
+              <td>
+                  <a href="#ViewEditDishesMenu/{{menu.id}}"><img src="../images/demo/accept.png" alt="edit"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

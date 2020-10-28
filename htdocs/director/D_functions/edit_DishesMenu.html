@@ -1,0 +1,33 @@
+<h1>Edit dishes in Menu {{id}}</h1>
+<div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Dish name</th>
+              <th>Cost piece</th>
+              <th>Cost total</th>
+              <th>description</th>
+              <th colspan="2">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in dishesOrd">
+              <td>{{d.name}}</td>
+              <td>{{d.c}}</td>
+              <td>{{d.c*d.serv}}</td>
+              <td>{{d.d}}</td>
+              <td><a href="http://master-restauran.byethost22.com/php/delete_dishOrdered.php?id={{d.id}}&m={{id}}"><img src="../images/demo/delete.png" alt="delete"/></a></td>
+              <td>
+                    <form action="http://master-restauran.byethost22.com/php/edit_dishOrderedServing.php" method="post" target="_self">
+                        <input class="one_third first" value="{{d.serv}}" min="1" max="250" type="number" name="serv">
+                        <input value="{{d.id}}" type="hidden" name="id_d">
+                        <input value="{{d.c}}" type="hidden" name="cost">
+                        <input value="{{id}}" type="hidden" name="id_m">
+                        <button class="one_third" type="submit" title="Edit">Edit</button>
+                    </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   

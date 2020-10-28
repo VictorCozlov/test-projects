@@ -1,0 +1,46 @@
+<h1>Edit product in dish</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Products</th>
+              <th>Weight</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in productsall">
+              <td>{{p.name}}</td>
+              <td>{{p.w}}</td>
+              <td>
+                  <a href="#editProdDish/{{id}}/{{name}}/{{id_d}}/{{p.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_prodInDish.php?id={{p.id}}&idd={{id_d}}&path={{id}}/{{name}}/{{id_d}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<form action="http://master-restauran.byethost22.com/php/edit_prodInDish.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Product</th>
+      <td>
+            <select class="selectpicker three_quarter first" name="prod_id" title="Choose one of the following...">
+                <option ng-repeat="pr in productOne" selected="" value="{{pr.id}}">{{pr.name}}</option>
+                <option ng-repeat="pr in prodRemainder" value="{{pr.id}}">{{pr.name}}</option>
+            </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Weight</th>
+      <td>
+          <input class="three_quarter first" ng-repeat="pr in productOne" value="{{pr.w}}" type="number" min="50" max="1000" name="w" placeholder="0">
+          <input class="three_quarter first" type="hidden" name="path" value="{{id}}/{{name}}/{{id_d}}">
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+    <button class="one_half" name="id_d" value="{{id_d}}" type="submit" title="Edit product">Edit Product</button>
+</form>

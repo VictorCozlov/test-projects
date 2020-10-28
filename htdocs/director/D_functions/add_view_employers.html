@@ -1,0 +1,59 @@
+<h1>Employers view/add new</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Employer</th>
+              <th>Telephone</th>
+              <th>Restaurant</th>
+              <th>Function</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="employer in employers">
+              <td>{{employer.name}}</td>
+              <td>{{employer.telephone}}</td>
+              <td>{{employer.id_r}}</td>
+              <td>{{employer.id_f}}</td>
+              <td>
+                  <a href="#editEmployers/{{employer.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_employer.php?id={{employer.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/add_employers.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" name="name" placeholder="Name"></td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td><input class="three_quarter first" type="text" name="telephone" placeholder="Telephone"></td>
+    </tr>
+    <tr>
+      <th scope="row">Restaurant</th>
+        <td>
+            <select class="selectpicker three_quarter first" name="id_rest">
+                <option ng-repeat="r in restns" value="{{r.id}}">{{r.name}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+      <th scope="row">Function</th>
+        <td>
+            <select class="selectpicker three_quarter first" name="id_funct">
+                <option ng-repeat="f in functions"  value="{{f.id}}">{{f.name}}</option>
+            </select>
+        </td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add employer">Add Employer</button>
+</form>

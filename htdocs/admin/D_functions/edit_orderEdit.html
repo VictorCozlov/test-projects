@@ -1,0 +1,42 @@
+<form action="http://master-restauran.byethost22.com/php/edit_OrderFromAll.php" method="post" target="_self">
+<table>
+  <tbody ng-repeat="o in orderEdit">
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+          <input class="three_quarter first" type="text" value="{{o.name}}" name="name" placeholder="Name">
+          <input class="three_quarter first" type="hidden" value="{{o.id}}" name="id">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td>
+          <input class="three_quarter first" type="text" value="{{o.tel}}" name="tel" placeholder="Tel">
+      </td> 
+    </tr>
+    <tr>
+      <th scope="row">Number of guests</th>
+      <td>
+          <input class="three_quarter first" type="number" value="{{o.ng}}" min="10" max="300" name="g" placeholder="nr of guests">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Prepayed</th>
+      <td>
+          <input class="three_quarter first" value="{{o.pr}}" type="number" min="0" max="5000" name="prep">
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Completed</th>
+      <td>
+          <select class="selectpicker three_quarter first" name="compl">
+                <option selected="" value="{{o.cp}}">{{o.cp}}</option>
+                <option value="{{(o.cp == 0) ? 1:0}}">{{(o.cp == 0) ? 1:0}}</option>
+            </select>
+      </td>
+    </tr>
+  
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Edit Order">Edit Order</button>
+</form>

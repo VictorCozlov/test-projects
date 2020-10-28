@@ -1,0 +1,44 @@
+<h1>Select Category</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="category in categories">
+              <td>{{category.name}}</td>
+              <td>
+                  <a href="#chooseCategory/{{category.id}}/{{category.name}}"><img src="../images/demo/accept.png" alt="edit"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/add_DishToCategory.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Dish</th>
+      <td>
+            <select class="selectpicker three_quarter first" name="dish" title="Choose one of the following...">
+                <option ng-repeat="dish in dishes" value="{{dish.id}}">{{dish.name}}</option>
+            </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Category</th>
+      <td>
+            <select class="selectpicker three_quarter first" name="category" title="Choose one of the following...">
+                <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add dish">Add Dish to Category</button>
+</form>

@@ -1,0 +1,45 @@
+<h1>Menu view/edit</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name Menu</th>
+              <th>Menu Price fc</th>
+              <th>Menu Price c</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="menu in menus">
+              <td>{{menu.n}}</td>
+              <td>{{menu.fc}}</td>
+              <td>{{menu.c}}</td>
+              <td>
+                  <a href="#editMenu/{{menu.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_menu.php?id={{menu.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/edit_menu.php" method="post" target="_self">
+<table>
+  <tbody ng-repeat="m in menu">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" name="name" value="{{m.n}}" placeholder="Name"></td>
+    </tr>
+    <tr>
+      <th scope="row">FirstCoast</th>
+      <td><input class="three_quarter first" type="text" name="fc" value="{{m.fc}}" placeholder="FirstCoast"></td>
+    </tr>
+    <tr>
+      <th scope="row">Coast</th>
+      <td><input class="three_quarter first" type="text" name="c" value="{{m.c}}" placeholder="Coast"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" name="id" value="{{id}}" title="Edit menu">Edit Menu</button>
+</form>

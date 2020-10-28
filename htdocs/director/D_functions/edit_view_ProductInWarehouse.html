@@ -1,0 +1,77 @@
+<h1>Products in chosen Warehous view & edit</h1>
+
+    <a href="http://master-restauran.byethost22.com/director/#/functions/productsInDeposit">Warehous</a>
+    <h1></h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Products</th>
+              <th>Weight/Piec</th>
+              <th>Unit</th>
+              <th>Price per kg</th>
+              <th>Producator</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in products">
+              <td>{{p.product}}</td>
+              <td>{{p.w}}</td>
+              <td>{{p.u}}</td>
+              <td>{{p.price}}</td>
+              <td>{{p.producator}}</td>
+              <td>
+                  <a href="#editProductInWarehouse/{{id}}/{{p.product}}/{{p.w}}/{{p.u}}/{{p.price}}/{{p.producator}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_ProductInWarehouse.php?id={{id}}&pr={{p.product}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          <h1></h1>
+          
+            <form action="http://master-restauran.byethost22.com/php/edit_productInDep.php" method="post" target="_self">
+                <table>
+                    <tbody>
+                    <tr>
+                      <th scope="row">Products</th>
+                      <td>
+                            <select class="selectpicker three_quarter first" name="prod_id" title="Choose one of the following...">
+                                <option value="{{product}}" selected="">{{product}}</option>
+                                <option ng-repeat="product in prod" value="{{product.id}}">{{product.name}}</option>
+                            </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Weight/Piec</th>
+                      <td><input class="three_quarter first" value="{{w}}" type="text" name="weight" placeholder="Weight"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Unit</th>
+                      <td>
+                            <select class="selectpicker three_quarter first" name="unit" title="Choose one of the following...">
+                                <option value="{{u}}" selected="">{{u}}</option>
+                                <option value="kg">kg</option>
+                                <option value="piec">pieces</option>
+                            </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Price per kg</th>
+                      <td><input class="three_quarter first" type="text" value="{{prc}}" name="price" placeholder="Price"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Provider</th>
+                      <td>
+                            <select class="selectpicker three_quarter first" name="provider" title="Choose one of the following...">
+                                <option value="">{{prd}}</option>
+                                <option ng-repeat="pr in providers" value="{{pr.id}}">{{pr.name}}</option>
+                                
+                            </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button class="one_half" name="id" value="{{id}}" type="submit" title="Edit product">Edit Product</button>
+            </form>
+      </div>

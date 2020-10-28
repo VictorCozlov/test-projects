@@ -1,0 +1,33 @@
+<h1>Provider view/add new</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="provider in providers">
+              <td>{{provider.name}}</td>
+              <td>
+                  <a href="#editProvider/{{provider.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_provider.php?id={{provider.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/add_provider.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Provider</th>
+      <td><input class="three_quarter first" type="text" name="name" placeholder="Name"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add provider">Add Provider</button>
+</form>

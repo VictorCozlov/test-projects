@@ -1,0 +1,24 @@
+<h1>Edit Procent Profit</h1>
+<div class="scrollable">
+<table>
+  <tbody ng-repeat="p in profit">
+    <tr>
+      <th scope="row">Dish procent</th>
+      <td>
+            <form action="http://master-restauran.byethost22.com/php/edit_profit.php" method="post" target="_self">
+                <input class="one_third first" value="{{p.dp}}" min="1" max="100" type="number" name="dp">
+                <button class="one_third" type="submit" title="Edit">Edit</button>
+            </form>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Profit procent</th>
+      <td>
+            <form action="http://master-restauran.byethost22.com/php/edit_profit.php" method="post" target="_self">
+                <input class="one_third first" value="{{p.pp}}" min="1" max="100" type="number" name="pp">
+                <button class="one_third" type="submit" title="Edit">Edit</button>
+            </form>
+      </td>
+    </tr>
+  </tbody>
+</table>

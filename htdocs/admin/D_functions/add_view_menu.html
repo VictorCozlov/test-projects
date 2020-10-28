@@ -1,0 +1,27 @@
+<h1>Select Menu</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Menu nr.</th>
+              <th>Name Menu</th>
+              <th>Menu Price finalCost</th>
+              <th>Menu Price c</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="menu in menus">
+              <td>{{menu.id}}</td>
+              <td>{{menu.n}}</td>
+              <td>{{menu.fc}}</td>
+              <td>{{menu.c}}</td>
+              <td>
+                  <a href="#editMenu/{{menu.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_menu.php?id={{menu.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+                  <a href="#add_dishesToMenu/{{menu.id}}"><img src="../images/demo/dish.png" alt="dish"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

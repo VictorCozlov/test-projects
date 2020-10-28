@@ -1,0 +1,32 @@
+<h1>View orders reserved</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Ord Price</th>
+              <th>Menu</th>
+              <th>Restaurant</th>
+              <th>Compl</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="o in ordersRes">
+              <td>{{o.name}}</td>
+              <td>{{o.date_ev}}</td>
+              <td>{{o.time_ev}}</td>
+              <td>{{o.op}}</td>
+              <td>{{o.m}}</td>
+              <td>{{o.namer}}</td>
+              <td>{{o.cp}}</td>
+              <td>
+                  <a href="#editOrderRes/{{o.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_order.php?id={{o.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

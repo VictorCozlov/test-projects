@@ -1,0 +1,19 @@
+<h1>Selected Category: {{name}}</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Dishes</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in dishesall">
+              <td>{{d.name}}</td>
+              <td>
+                  <a href="#functions/ProdInDish/{{id}}/{{name}}/{{d.id}}"><img src="../images/demo/accept.png" alt="accept"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

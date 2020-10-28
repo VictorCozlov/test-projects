@@ -1,0 +1,57 @@
+<h1>Dishes view/add new</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>First cost</th>
+              <th>Cost</th>
+              <th>Weight</th>
+              <th>Description</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="dish in dishes">
+              <td>{{dish.name}}</td>
+              <td>{{dish.fc}}</td>
+              <td>{{dish.c}}</td>
+              <td>{{dish.w}}</td>
+              <td>{{dish.d}}</td>
+              <td>
+                  <a href="#editDishes/{{dish.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_disch.php?id={{dish.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/add_dishes.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Dish</th>
+      <td><input class="three_quarter first" type="text" name="dish" placeholder="Dish name"></td>
+    </tr>
+    <tr>
+      <th scope="row">First cost</th>
+      <td><input class="three_quarter first" type="number" min="5" max="250" name="fc" placeholder="0"></td>
+    </tr>
+    <tr>
+      <th scope="row">Cost</th>
+      <td><input class="three_quarter first" type="number" disabled=""  min="0" max="250" name="c" value="0"></td>
+    </tr>
+    <tr>
+      <th scope="row">Weight</th>
+      <td><input class="three_quarter first" type="number" min="50" max="700" name="w" placeholder="0"></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><textarea class="three_quarter first" rows="5" name="desc"></textarea></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Add dish">Add Dish</button>
+</form>

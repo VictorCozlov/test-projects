@@ -1,0 +1,20 @@
+<h1>Add menu to order: {{id}}</h1>
+<form action="http://master-restauran.byethost22.com/php/add_menuForOrder.php" method="post" target="_self">
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">Menu</th>
+      <td><input class="three_quarter first" type="text" name="name" placeholder="Name for menu"></td>
+    </tr>
+    <tr>
+      <th scope="row">FirstCoast</th>
+      <td><input class="three_quarter first" type="text" name="fc" disabled value="0" placeholder="FirstCoast"></td>
+    </tr>
+    <tr>
+      <th scope="row">Coast</th>
+      <td><input class="three_quarter first" type="text" name="c" disabled value="0" placeholder="Coast"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" name="id" value="{{id}} "type="submit" title="Add Menu">Add Menu</button>
+</form>

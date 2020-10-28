@@ -1,0 +1,19 @@
+<h1>Warehous view</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Warehous</th>
+              <th>Choose Warehouse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="warehous in warehouses">
+              <td>{{warehous.name}}</td>
+              <td>
+                  <a href="#chooseWarehouse/{{warehous.id}}"><img src="../images/demo/accept.png" alt="edit"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

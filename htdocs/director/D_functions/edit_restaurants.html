@@ -1,0 +1,24 @@
+<h1>Restaurant edit</h1>
+<form action="http://master-restauran.byethost22.com/php/edit_restaurant.php" method="post" name="editRestaur">
+<table>
+  <tbody ng-repeat="restn in restns">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" name="name" placeholder="Name" value="{{restn.name}}"></td>
+    </tr>
+    <tr>
+      <th scope="row">Adress</th>
+      <td><input class="three_quarter first" type="text" name="adress" placeholder="Adress" value="{{restn.adress}}"></td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td><input class="three_quarter first" type="tel" placeholder="Contact Number" name="telephone" value="{{restn.telephone}}"></td>
+    </tr>
+    <tr>
+      <th scope="row">Number sits</th>
+      <td><input class="three_quarter first" type="number"  min="1" max="300" name="number_sits" placeholder="Number sits" value="{{restn.sits}}"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" title="Edit restaurant" name="id" value="{{id}}">Edit restaurant</button>
+</form>

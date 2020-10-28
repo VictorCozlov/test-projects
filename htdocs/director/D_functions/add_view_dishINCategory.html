@@ -1,0 +1,19 @@
+<h1>Selected Category: {{name}}</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Dishes</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in dishesall">
+              <td>{{d.name}}</td>
+              <td>
+                  <a href="http://master-restauran.byethost22.com/php/delete_dishINCategory.php?id={{d.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

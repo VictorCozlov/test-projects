@@ -1,0 +1,33 @@
+<h1>Add dishes to Menu {{id}}</h1>
+<div class="scrollable">
+    <h2>Category:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Dish name</th>
+              <th>Cost</th>
+              <th>Weight</th>
+              <th>description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in dishes">
+              <td>{{d.name}}</td>
+              <td>{{d.cost}}</td>
+              <td>{{d.w}}</td>
+              <td>{{d.descr}}</td>
+              <td>
+                    <form action="http://master-restauran.byethost22.com/php/add_dishOrdered_toMenu.php" method="post" target="_self">
+                        <input class="one_half first" value="10" min="1" max="250" type="number" name="serv">
+                        <input class="one_half first" value="{{d.id}}" type="hidden" name="id_d">
+                        <input class="one_half first" value="{{d.cost}}" type="hidden" name="cost">
+                        <input class="one_half first" value="{{id}}" type="hidden" name="id_m">
+                        <button class="one_third" type="submit" title="Add dish"><img src="../images/demo/accept.png" alt="delete"/></button>
+                    </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   

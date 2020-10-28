@@ -1,0 +1,23 @@
+<h1>Choose one from reserved orders</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Restaurant</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="o in order">
+              <td>{{o.name}}</td>
+              <td>{{o.date_ev}}</td>
+              <td>{{o.namer}}</td>
+              <td>
+                  <a href="#functions/menu/toOrder/{{o.id}}"><img src="../images/demo/accept.png" alt="accept"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

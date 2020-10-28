@@ -1,0 +1,23 @@
+<h1>Dishes Popular</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Cost</th>
+              <th>Weight</th>
+              <th>Description</th>
+              <th>Popularity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="dish in dishes">
+              <td>{{dish.name}}</td>
+              <td>{{dish.c}}</td>
+              <td>{{dish.w}}</td>
+              <td>{{dish.d}}</td>
+              <td>{{dish.rep}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

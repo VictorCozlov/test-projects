@@ -1,0 +1,21 @@
+<h1>Choose Employers for Order {{id}}</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Employer</th>
+              <th>Function</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="employer in employers">
+              <td>{{employer.name}}</td>
+              <td>{{employer.id_f}}</td>
+              <td>
+                  <a href="http://master-restauran.byethost22.com/php/add_employerToOrder.php?id={{id}}&emp={{employer.id}}"><img src="../images/demo/accept.png" alt="accept"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html ng-app="myRst">
+
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<!-- IE9 Placeholder Support -->
+<script src="layout/scripts/jquery.placeholder.min.js"></script>
+<!-- / IE9 Placeholder Support -->
+
+<!-- Angular config js -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="layout/scripts/paths.js"></script>
+
+<head>
+<title>Restauran</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- angular templating -->
+		<!-- this is where content will be injected -->
+<div ng-view></div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4 bgded overlay" style="background-image:url('images/demo/backgrounds/background-03.jpg');">
+    <div ng-include="'view/footer.html'"></div>
+</div>
+<!-- ################################################################################################ -->
+<div ng-include="'view/bottom.html'"></div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<h1>Users view/edit</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Login</th>
+              <th>Password</th>
+              <th>Function</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in users">
+              <td>{{user.name}}</td>
+              <td>{{user.login}}</td>
+              <td>{{user.password}}</td>
+              <td>{{user.function}}</td>
+              <td>
+                  <a href="#editUser/{{user.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_userLogin.php?id={{user.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/edit_userLogin.php" method="post" target="_self">
+<table ng-repeat="us in user">
+  <tbody>
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" name="name" value="{{us.name}}" placeholder="Name"></td>
+    </tr>
+    <tr ng-switch="'{{us.function}}'">
+      <th scope="row">Function</th>
+      <td ng-switch-when="director">
+          <select size="3" multiple class="three_quarter first" name="function">
+            <option disabled>Choose function</option>
+            <option selected value="director">director</option>
+            <option value="admin">admin</option>
+          </select>
+      </td>
+      <td ng-switch-when="admin">
+          <select size="3" multiple class="three_quarter first" name="function">
+            <option disabled>Choose function</option>
+            <option value="director">director</option>
+            <option selected value="admin">admin</option>
+          </select>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Login</th>
+      <td><input class="three_quarter first" type="text" name="login" value="{{us.login}}" placeholder="Login"></td>
+    </tr>
+    <tr>
+      <th scope="row">Pass</th>
+      <td><input class="three_quarter first" type="text" name="pass" value="{{us.password}}" placeholder="Pass"></td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" name="id" value="{{id}}" title="Add user">Edit user</button>
+</form>

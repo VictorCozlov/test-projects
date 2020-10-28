@@ -1,0 +1,25 @@
+<h1>Select Order, Please</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Restaurant</th>
+              <th>Options</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="o in ordersRes">
+              <td>{{o.name}}</td>
+              <td>{{o.date_ev}}</td>
+              <td>{{o.time_ev}}</td>
+              <td>{{o.namer}}</td>
+              <td>
+                  <a href="#editWorkersForOrder/{{o.id}}"><img src="../images/demo/accept.png" alt="edit"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>

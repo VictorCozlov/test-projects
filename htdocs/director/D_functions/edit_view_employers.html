@@ -1,0 +1,61 @@
+<h1>Employers view/edit</h1>
+      <div class="scrollable">
+        <table>
+          <thead>
+            <tr>
+              <th>Employer</th>
+              <th>Telephone</th>
+              <th>Restaurant</th>
+              <th>Function</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="employer in employers">
+              <td>{{employer.name}}</td>
+              <td>{{employer.telephone}}</td>
+              <td>{{employer.id_r}}</td>
+              <td>{{employer.id_f}}</td>
+              <td>
+                  <a href="#editEmployers/{{employer.id}}"><img src="../images/demo/edit.png" alt="edit"/></a>
+                  <a href="http://master-restauran.byethost22.com/php/delete_employer.php?id={{employer.id}}"><img src="../images/demo/delete.png" alt="delete"/></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+<form action="http://master-restauran.byethost22.com/php/edit_employer.php" method="post" target="_self">
+<table>
+  <tbody ng-repeat="e in emp">
+    <tr>
+      <th scope="row">Name</th>
+      <td><input class="three_quarter first" type="text" value="{{e.name}}" name="name" placeholder="Name"></td>
+    </tr>
+    <tr>
+      <th scope="row">Telephone</th>
+      <td><input class="three_quarter first" type="text" value="{{e.telephone}}" name="telephone" placeholder="Telephone"></td>
+    </tr>
+    <tr>
+      <th scope="row">Restaurant</th>
+        <td>
+            <select class="selectpicker three_quarter first" name="id_rest">
+                    <option  value="" selected="">{{e.id_r}}</option>
+                    <option ng-repeat="r in restns" value="{{r.id}}">{{r.name}}</option> 
+            </select>
+        </td>
+    </tr>
+    <tr>
+      <th scope="row">Function</th>
+        <td>
+            <select class="selectpicker three_quarter first" name="id_funct" >
+                <option  value="" selected="">{{e.id_f}}</option>
+                <option  ng-repeat="f in functions" value="{{f.id}}">{{f.name}}</option>
+            </select>
+        </td>
+    </tr>
+  </tbody>
+</table>
+    <button class="one_half" type="submit" name="id" value="{{id}}" title="Edit employer">Edit Employer</button>
+</form>
